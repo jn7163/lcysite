@@ -1,0 +1,27 @@
+
+{% if the_author %}
+<head>
+<title>{{the_author.name}}'s data</title>
+</head>
+
+<body>
+<p>{{the_author.name}}......email: {{the_author.email}}</p>
+
+</body>
+{% elif authors %}
+
+<head>
+<title>our authors</title>
+</head>
+
+<body>
+<p>here are our authors</p>
+<ul>
+{% for author in authors %}
+<ul><a href="/blog/author/{{author.name}}">{{author.name}}</a></ul>
+{% endfor %}
+</ul>
+</body>
+
+{% endif %}
+

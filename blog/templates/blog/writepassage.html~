@@ -1,0 +1,17 @@
+<html>
+{% if newpassage %}
+	<head>
+		<title>editer</title>
+	</head>
+	<body>
+		<form action="{%url 'blog:newpassage' newpassage.id%}" method="post">
+			<input type="text" name="title">
+			<br/>
+			<textarea name="body" style="width:800px;height:600px;"></textarea>
+			<br/>
+			<input type="submit" name="sub" value="OK">
+		</form>
+	</body>
+</html>
+
+{% endif %}

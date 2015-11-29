@@ -1,0 +1,29 @@
+{% if the_passage %}
+<head>
+<title>{{the_passage.title}}......by {{the_passage.auther.name}}</title>
+</head>
+
+<body>
+
+<h1>{{the_passage.title}}</h1>
+<div>{{the_passage.body}}</div>
+<br><br>
+<br>
+<br>
+<br>
+<div>
+{%if reply%}
+	{%for rep in reply%}
+		<div>
+			<p>{{rep.name}}-----------------{{rep.time}}</p>		
+			<p>{{rep.body}}</p>
+		</div>
+	{%endfor%}
+{%else%}
+	<p>there's no reply.</p>
+{%endif%}
+</div>
+<a href="{% url 'replys' the_passage.id %}">回复</a>
+</body>
+
+{% endif %}

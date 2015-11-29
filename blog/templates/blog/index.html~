@@ -1,0 +1,23 @@
+{% if passages %}
+<head>
+	<title>lcy's blog</title>
+</head>
+<body>
+	<div>
+		<strong><a href={% url 'passages' '0' %}>文章</a></strong>
+	</div>
+	<div>
+		<ul>
+		{% for passage in passages %}
+		<li><a href="{% url 'passage' passage.id %}">{{passage.title}}
+			</a>------------------
+			{{passage.author.name}}
+		<li>							
+		{% endfor %}
+		</ul>
+	</div>
+</body>
+{%else%}
+<p>no data</p>
+
+{%endif%}

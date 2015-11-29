@@ -1,0 +1,9 @@
+<!--跳转passage/{{passage_id}}/-->
+
+{% if passage_id %}
+<script type="text/javascript">
+
+alert("发表成功");
+windows.location="{% url 'passage' passage_id %}";
+</script>
+{% endif %}
